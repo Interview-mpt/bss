@@ -16,7 +16,9 @@ return new class extends Migration
             $table->morphs('sourceable'); // Khách hàng hay vendor đặt
             $table->integer('product_id');
             $table->string('address');
-            $table->integer('vendor_id');
+            $table->integer(
+                'vendor_id'
+            ); // Khi order Vô thì sẽ lấy vendor append luôn vô để tính được vendor đặt hàng nhiều nhất trong vòng 1 tuần.
             $table->timestamps();
         });
     }
